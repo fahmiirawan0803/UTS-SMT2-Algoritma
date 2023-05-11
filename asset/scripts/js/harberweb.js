@@ -4,7 +4,7 @@ $(document).ready(function () {
         $("#infoinvaccr").html("Nama Anda : " + txtInput);
         $.ajax({
             type: "POST",
-            url: "/assets/scripts/ajax/getcurl.php",
+            url: "/asset/scripts/ajax/getcurl.php",
             data: "",
             success: function (response) {
                 $("#infoinvaccr").html("<br/>Response<br/> " + 
