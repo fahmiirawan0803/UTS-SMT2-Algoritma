@@ -8,29 +8,6 @@ curl_close($curl);
 
 $data = json_decode($output, true);
 //echo "<pre>"; print_r($data); echo "</pre>";
-$onscreen = '<table class="table" width="100%">
-                <thead>
-                    <th>KODE BARANG</th>
-                    <th>NAMA BARANG</th>
-                    <th>GROUP BARANG</th>
-                    <th>HARGA JUAL</th>
-                    <th>QUANTITY</th>
-                    
-                </thead>
-            ';
-foreach($response_array as $resp){
-    if($resp['g_code'][0] === "B"){
-        $onscreen .= '<tr>
-                    <td>'.$resp['i_code'].'</td>
-                    <td>'.$resp['i_name'].'</td>
-                    <td>'.$resp['g_code'].'</td>
-                    <td>'.$resp['i_sell'].'</td>
-                    <td>'.$resp['i_qty'].'</td>
-                </tr>';
-    }
-}
-$onscreen .= '</table>';
-echo $onscreen;
 
 ?>
 
