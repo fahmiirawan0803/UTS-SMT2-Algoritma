@@ -1,13 +1,18 @@
 <?php
-
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, "https://farmasi.mimoapps.xyz/mimoqss2auyqD1EAlkgZCOhiffSsFl6QqAEIGtM");
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-$output = curl_exec($curl);
-curl_close($curl);
+curl_setopt_array($curl, array(
+    CURLOPT_URL => 'https://farmasi.mimoapps.xyz/mimoqss2auyqD1EAlkgZCOhiffSsFl6QqAEIGtM',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'GET',
+));
 
-$data = json_decode($output, true);
-//echo "<pre>"; print_r($data); echo "</pre>";
+$response = curl_exec($curl); // bentuk JSON
+echo $response;
 ?>
 
 <html>

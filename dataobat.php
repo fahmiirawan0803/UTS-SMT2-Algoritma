@@ -27,7 +27,8 @@ $data = json_decode($output, true);
                 </tr>
 
 
-            <?php foreach($data as $obat) : ?>
+
+            <?php foreach($data as $obat) if($resp['g_code'][0] === "B") : ?>
                 <tr>
                     <td><?= $obat['i_code'] ?></td>
                     <td><?= $obat['i_name'] ?></td>
