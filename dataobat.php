@@ -24,19 +24,28 @@ $data = json_decode($output, true);
                     <td>Nama Barang</td>
                     <td>Grup Barang</td>
                     <td>Harga Jual</td>
+                    <td>Quantity</td>
                 </tr>
 
 
+            <?php 
+            $hurufawal = 'Daftar Nama Obat Yang Grup Barangnya Bearawalan Hururf "B"';
+            
+            foreach($data as $obat) {
+                if($obat['g_code'][0] === "B"){
+                $hurufawal .= '<tr>
+                    <td>'.$obat['i_code'].'</td>
+                    <td>'.$obat['i_name'].'</td>
+                    <td>'.$obat['g_code'].'</td>
+                    <td>'.$obat['i_sell'].'</td>
+                    <td>'.$obat['i_qty'].'</td>
+                    </tr>';
+                    }
+            }
+            $hurufawal .= '</table>';
+            echo $hurufawal;
+             ?>
 
-            <?php foreach($data as $obat) if($resp['g_code'][0] === "B") : ?>
-                <tr>
-                    <td><?= $obat['i_code'] ?></td>
-                    <td><?= $obat['i_name'] ?></td>
-                    <td><?= $obat['g_code'] ?></td>
-                    <td><?= $obat['i_sell'] ?></td>
-                </tr>
-
-            <?php endforeach ?>
             </table>
         </div>
     </body>
